@@ -1,65 +1,95 @@
+// BIBLIOTECAS
 #include <stdio.h>
 #include <stdlib.h>
 
+// PROTOTIPOS
 void Caratula();
 void Primos(int);
 
+// FUNCI√ìN PRINCIPAL
+int main()
+{
+	int num, repetir;
+	Caratula();
+	do
+	{
+		printf("Ingrese un n√∫mero entero positivo: \n");
+		scanf("%d", &num);
+		// Validaci√≥n de n√∫mero positivo
+		if (num <= 0)
+		{
+			printf("Ingresa un valor mayor a 0\n");
+		}
+		else
+		{
+			// Llamada a la funci√≥n de primos
+			Primos(num);
+			// Opci√≥n para repetir el programa
+			printf("\n¬øDesea realizar otra operaci√≥n? 1.- S√≠, (Cualquier n√∫mero).- No\n");
+			scanf("%d", &repetir);
+			// Limpieza de pantalla o salida
+			if (repetir == 1)
+			{
+				system("clear");
+			}
+			else
+			{
+				printf("\nSaliendo...\n");
+			}
+		}
+	} while (num <= 0 || repetir == 1);
+
+	return 0;
+}
+
+// FUNCIONES
 void Caratula()
 {
-	
-	puts("Equipo 1\n"
-	     "Integrantes:\n"
-	     "1. Contreras Aviles JosÈ Ra˙l.\n"
-	     "2. Hern·ndez Tovar Evelyn Ariadna.\n"
-	     "3. Rosas Fregoso Leonardo.\n"
-	     "4. Rosas V·zquez Eduardo.\n"
-	     "5. Zamitiz Carmona Cristian Erasto.");
+	// Titulo
+	puts("Programa 11 - Primos.\n");
+
+	// Descripci√≥n
+	puts("Este programa determina si un n√∫mero N, entero positivo, es primo\n");
+
+	// Integrantes
+	puts("Equipo 01\n"
+		 "Integrantes:\n"
+		 "1. Contreras Aviles Jos√© Ra√∫l.\n"
+		 "2. Hern√°ndez Tovar Evelyn Ariadna.\n"
+		 "3. Rosas Fregoso Leonardo.\n"
+		 "4. Rosas V√°zquez Eduardo.\n"
+		 "5. Zamitiz Carmona Cristian Erasto.\n");
 	printf("Presiona Enter");
+	// Pausa para leer la car√°tula
 	getchar();
 	system("clear");
 }
 
-void Primos(int numero) {
+void Primos(int numero)
+{
 	int contador;
-	for(int i = 1; i <= numero; i++) {
+	// Bucle para revisar cada n√∫mero desde 1 hasta el n√∫mero ingresado
+	for (int i = 1; i <= numero; i++)
+	{
 		contador = 0;
-		for(int j = 1; j <= i; j++) {
-			if(i % j == 0) {
+		for (int j = 1; j <= i; j++)
+		{
+			// Verificar si i es divisible por j
+			if (i % j == 0)
+			{
+				// Incrementar el contador de divisores
 				contador += 1;
 			}
 		}
-		if(contador == 2) {
-			printf("El n˙mero %d es n˙mero primo\n", i);
+		// Si el contador es 2, entonces i es primo
+		if (contador == 2)
+		{
+			printf("El n√∫mero %d es primo\n", i);
 		}
-		else {
-			printf("El n˙mero %d no es un n˙mero primo\n", i);
+		// Si el contador nes mayor 2, entonces i no es primo
+		else
+		{
+			printf("El n√∫mero %d no es un primo\n", i);
 		}
 	}
-}
-
-int main(){
-	int num, repetir;
-	Caratula();
-	do{
-	    puts("Programa 11 - Primos.");
-	    puts("Este programa determina si un n˙mero N, entero positivo, es primo\n");
-		puts("Ingresa el lÌmite superior de n˙meros que quieras analizar para saber si son n˙meros primos o no:");
-		scanf("%d", &num);
-		if(num <= 0){
-			printf("Ingresa un valor mayor a 0\n");
-		}else{
-			Primos(num);
-			printf("\nøDesea realizar otra operaciÛn? 1.- SÌ, (Cualquier n˙mero).- No\n");
-			scanf("%d", &repetir);
-			if(repetir == 1){
-				system("clear");
-			}
-			else{
-				printf("\nSaliendo...\n");
-				
-			}
-		}
-	} while (num <= 0 || repetir == 1);
-	
-	return 0;
 }
