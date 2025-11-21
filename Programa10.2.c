@@ -58,7 +58,9 @@ void Caratula()
 	puts("Este programa obtiene todos los divisores de un número entero N.\n");
 
 	// Integrantes
-	puts("1. Contreras Aviles José Raúl.\n"
+	puts("\nEquipo 01\n"
+		"Integrantes del equipo:\n"
+		 "1. Contreras Aviles José Raúl.\n"
 		 "2. Hernández Tovar Evelyn Ariadna.\n"
 		 "3. Rosas Fragoso Leonardo.\n"
 		 "4. Rosas Vázquez Eduardo.\n"
