@@ -81,15 +81,15 @@ void Primos(int numero)
 				contador += 1;
 			}
 		}
-		// Si el contador es 2, entonces i es primo
-		if (contador == 2)
-		{
-			printf("El número %d es primo\n", i);
-		}
-		// Si el contador nes mayor 2, entonces i no es primo
-		else
-		{
-			printf("El número %d no es un primo\n", i);
-		}
+	}
+	// Si el contador es 2, entonces i es primo
+	if (contador == 2)
+	{
+		printf("El número %d es primo\n", numero);
+	}
+	// Si el contador nes mayor 2, entonces i no es primo
+	else
+	{
+		printf("El número %d no es un primo\n", numero);
 	}
 }
