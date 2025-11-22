@@ -1,24 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Prototipos
 void Caratula();
 void Primos(int);
 
 void Caratula()
 {
-	
+	puts("Programa 11 - Primos.\n"
+		"Este programa determina si un n√∫mero N, entero positivo, es primo");
 	puts("Equipo 1\n"
 	     "Integrantes:\n"
-	     "1. Contreras Aviles JosÈ Ra˙l.\n"
-	     "2. Hern·ndez Tovar Evelyn Ariadna.\n"
+	     "1. Contreras Aviles Jos√© Ra√∫l.\n"
+	     "2. Hern√°ndez Tovar Evelyn Ariadna.\n"
 	     "3. Rosas Fregoso Leonardo.\n"
-	     "4. Rosas V·zquez Eduardo.\n"
+	     "4. Rosas V√°zquez Eduardo.\n"
 	     "5. Zamitiz Carmona Cristian Erasto.");
 	printf("Presiona Enter");
 	getchar();
 	system("clear");
 }
 
+// Funcion para evaluar los primos de un numero
 void Primos(int numero) {
 	int contador;
 	for(int i = 1; i <= numero; i++) {
@@ -29,10 +32,10 @@ void Primos(int numero) {
 			}
 		}
 		if(contador == 2) {
-			printf("El n˙mero %d es n˙mero primo\n", i);
+			printf("El n√∫mero %d es n√∫mero primo\n", i);
 		}
 		else {
-			printf("El n˙mero %d no es un n˙mero primo\n", i);
+			printf("El n√∫mero %d no es un n√∫mero primo\n", i);
 		}
 	}
 }
@@ -41,15 +44,13 @@ int main(){
 	int num, repetir;
 	Caratula();
 	do{
-	    puts("Programa 11 - Primos.");
-	    puts("Este programa determina si un n˙mero N, entero positivo, es primo\n");
-		puts("Ingresa el lÌmite superior de n˙meros que quieras analizar para saber si son n˙meros primos o no:");
+		puts("Ingresa el l√≠mite superior de n√∫meros que quieras analizar para saber si son n√∫meros primos o no:");
 		scanf("%d", &num);
 		if(num <= 0){
 			printf("Ingresa un valor mayor a 0\n");
 		}else{
 			Primos(num);
-			printf("\nøDesea realizar otra operaciÛn? 1.- SÌ, (Cualquier n˙mero).- No\n");
+			printf("\n¬øDesea realizar otra operaci√≥n? 1.- S√≠, (Cualquier n√∫mero).- No\n");
 			scanf("%d", &repetir);
 			if(repetir == 1){
 				system("clear");
