@@ -182,7 +182,7 @@ int main()
 			if((base<=0)||(altura<=0)||(lado1t<=0)||(lado2t<=0)||((controltri1<=lado2t)||(controltri2<=lado1t)||(controltri3<=base))) {
 				puts("\nNo se puede sacar un área con esas medidas.\n");
 			} else {
-				printf("El área del **triángulo** es %f y su perímetro es %f.\n",triangulo(base, altura), triangulo2(base, lado1t, lado2t));
+				printf("El área del triángulo es %f y su perímetro es %f.\n",triangulo(base, altura), triangulo2(base, lado1t, lado2t));
 			}
 			break;
 
