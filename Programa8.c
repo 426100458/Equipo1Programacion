@@ -2,12 +2,13 @@
 #include <stdlib.h>
 
 void Caratula(){
+    puts("Programa 8 (Factorial)\nCalcular el factorial de un nÃºmero entero positivo (no usar recursividad)");
     puts("Equipo 1\n"
          "Integrantes:\n"
-         "1. Contreras Aviles José Raúl.\n"
-         "2. Hernández Tovar Evelyn Ariadna.\n"
+         "1. Contreras Aviles JosÃ© RaÃºl.\n"
+         "2. HernÃ¡ndez Tovar Evelyn Ariadna.\n"
          "3. Rosas Fragoso Leonardo.\n"
-         "4. Rosas Vázquez Eduardo.\n"
+         "4. Rosas VÃ¡zquez Eduardo.\n"
          "5. Zamitiz Carmona Cristian Erasto.\n");
     puts("Presiona Enter");
     getchar();
@@ -24,22 +25,19 @@ void Factorial(){
     unsigned long long resultado; 
 
     do{
-        puts("Programa 8 (Factorial)");
-        puts("Calcular el factorial de un número entero positivo (no usar recursividad)");
-        
-        puts("Ingresa el número al que deseas encontrar su factorial (no mayor a 20)): ");
+        puts("Ingresa el nÃºmero al que deseas encontrar su factorial (no mayor a 20)): ");
         
         if (scanf("%d", &factorial) != 1) {
-            puts("Error: Entrada no válida (debe ser un número entero).");
+            puts("Error: Entrada no vÃ¡lida (debe ser un nÃºmero entero).");
             Limpiar();
             factorial = -1;
         }
         Limpiar();
 
         if (factorial < 0){
-            puts("El factorial no está definido para números negativos.");
+            puts("El factorial no estÃ¡ definido para nÃºmeros negativos.");
         } else if (factorial > 20){
-            puts("El número es demasiado grande, el resultado será incorrecto con unsigned long long (20! es el límite).");
+            puts("El nÃºmero es demasiado grande, el resultado serÃ¡ incorrecto con unsigned long long (20! es el lÃ­mite).");
         } else {
             resultado = 1;
             
