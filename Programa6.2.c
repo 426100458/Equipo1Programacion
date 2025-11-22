@@ -83,7 +83,7 @@ puts("Equipo 1\n"
     "Integrantes:\n"
     "1. Contreras Aviles José Raúl.\n"
     "2. Hernández Tovar Evelyn Ariadna.\n"
-    "3. Rosas Fragoso Leonardo.\n"
+    "3. Rosas Fregoso Leonardo.\n"
     "4. Rosas Vázquez Eduardo.\n"
     "5. Zamitiz Carmona Cristian Erasto.");
 puts("Presiona Enter");
