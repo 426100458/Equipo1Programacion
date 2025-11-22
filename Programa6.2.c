@@ -3,6 +3,7 @@
 #include <math.h>
 #define PI 3.141592
 
+// Prototipos
 float triangulo(float, float);
 float triangulo2(float, float, float);
 float circulo(float);
@@ -15,34 +16,42 @@ float trapecio(float, float, float);
 float trapecio2(float, float, float);
 void Limpieza();
 
+// Funci√≥n √°rea c√≠rculo
 float circulo(float no) {
 	return PI*(no*no);
 }
 
+// Funci√≥n per√≠metro c√≠rculo
 float circulo2(float no) {
 	return PI*(2*no);
 }
 
+// Funci√≥n √°rea Rect√°ngulo
 float rectangulo(float lado, float lado1) {
 	return lado*lado1;
 }
 
+// Funci√≥n per√≠metro rect√°ngulo
 float rectangulo2(float lado, float lado1) {
 	return (lado*2)+(2*lado1);
 }
 
+// Funci√≥n √°rea tri√°ngulo
 float triangulo(float base, float altura) {
 	return (base*altura)/2;
 }
 
+// Funci√≥n per√≠metro tri√°ngulo
 float triangulo2(float base, float lado1t,float lado2t) {
 	return base+lado1t+lado2t;
 }
 
+// Funci√≥n √°rea rombo
 float rombo(float diametromay, float diametromen) {
 	return (diametromay*diametromen)/2;
 }
 
+// Funci√≥n per√≠metro rombo
 float rombo2(float diametromay, float diametromen) {
 	float ayuda, help;
 	ayuda= diametromay/2;
@@ -50,28 +59,32 @@ float rombo2(float diametromay, float diametromen) {
 	return 4*(sqrt((pow(ayuda,2))+(pow(help,2))));
 }
 
+// Funci√≥n √°rea trapecio
 float trapecio(float basemay, float basemen, float alturatrap) {
 	return ((basemay + basemen) * alturatrap) / 2;
 }
 
+// Funci√≥n per√≠metro trapecio
 float trapecio2(float basemay, float basemen, float alturatrap) {
 	float need;
 	need=((basemay-basemen)/2);
 	return basemay+basemen+(2*(sqrt((pow(need,2))+(pow(alturatrap,2)))));
 }
 
+// Funci√≥n limpiar buffer
 void Limpieza() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {}
 }
 
+// Funci√≥n car√°tula
 void Caratula(){
 puts("Equipo 1\n"
     "Integrantes:\n"
-    "1. Contreras Aviles JosÈ Ra˙l.\n"
-    "2. Hern·ndez Tovar Evelyn Ariadna.\n"
+    "1. Contreras Aviles Jos√© Ra√∫l.\n"
+    "2. Hern√°ndez Tovar Evelyn Ariadna.\n"
     "3. Rosas Fragoso Leonardo.\n"
-    "4. Rosas V·zquez Eduardo.\n"
+    "4. Rosas V√°zquez Eduardo.\n"
     "5. Zamitiz Carmona Cristian Erasto.");
 puts("Presiona Enter");
 getchar();
@@ -80,19 +93,20 @@ system("clear");
 
 int main()
 {
-    Caratula();
+     Caratula();
 
 	int caso, control = 1;
-	int controltri1, controltri2, controltri3; 
+	int controltri1, controltri2, controltri3;
 
 	do {
+		// Men√∫
 		puts("Programa 6\n"
-		"Mediante un men˙ de opciones, calcular el ·rea y perÌmetro de las siguientes figuras geomÈtricas.\n"
-		"Escoge cu·l figura deseas calcular su ¡rea y perÌmetro:");
+		"Mediante un men√∫ de opciones, calcular el √°rea y per√≠metro de las siguientes figuras geom√©tricas.\n"
+		"Escoge cu√°l figura deseas calcular su √Årea y per√≠metro:");
 		do {
-			printf("1.-CÌrculo.\n");
-			printf("2.-Rect·ngulo.\n");
-			printf("3.-Tri·ngulo.\n");
+			printf("1.-C√≠rculo.\n");
+			printf("2.-Rect√°ngulo.\n");
+			printf("3.-Tri√°ngulo.\n");
 			printf("4.-Rombo.\n");
 			printf("5.-Trapecio.\n");
 			printf("6.-Salir.\n");
@@ -100,8 +114,9 @@ int main()
 			scanf("%d", &caso);
 			Limpieza();
 
+			// Repetici√≥n del men√∫
 			if (caso<=0||caso>6) {
-				puts("\n\nEso no est· dentro del men˙, seleccione un n˙mero dentro del men˙ (entre 1-6)");
+				puts("\n\nEso no est√° dentro del men√∫, seleccione un n√∫mero dentro del men√∫ (entre 1-6)");
 			}
 		} while(caso<=0||caso>6);
 
@@ -112,45 +127,48 @@ int main()
 			puts("Preparando para salir del programa...");
 			break;
 		}
-
+		// Elecci√≥n de casos v√°lidos
 		switch (caso){
 		case 1:
+			// Entrada de datos del c√≠rculo
 			float radio;
-			puts("Inserta el radio del cÌrculo:");
+			puts("Inserta el radio del c√≠rculo:");
 			scanf("%f", &radio);
 			Limpieza();
 			if (radio<=0) {
-				puts("\nNo se puede sacar un ·rea con esa medida.\n");
+				puts("\nNo se puede sacar un √°rea con esa medida.\n");
 			}else{
-				printf("El ·rea del cÌrculo es %f y el perÌmetro del cÌrculo es %f.\n",circulo(radio), circulo2(radio));
+				printf("El √°rea del c√≠rculo es %f y el per√≠metro del c√≠rculo es %f.\n",circulo(radio), circulo2(radio));
 			}
 			break;
 
 		case 2:
+			// Entrada de datos del rect√°ngulo
 			float lado, lado1;
-			puts("Inserta una medida del lado del rect·ngulo:");
+			puts("Inserta una medida del lado del rect√°ngulo:");
 			scanf("%f", &lado);
 			Limpieza();
-			puts("Inserta una medida de otro lado del rect·ngulo:");
+			puts("Inserta una medida de otro lado del rect√°ngulo:");
 			scanf("%f", &lado1);
 			Limpieza();
 			if(lado<=0||lado1<=0) {
-				puts("\nNo se puede sacar un ·rea con esa medida.\n");
+				puts("\nNo se puede sacar un √°rea con esa medida.\n");
 			}else
 			{
-				printf("El ·rea del rect·ngulo es %f y su perÌmetro es %f.\n",rectangulo(lado, lado1), rectangulo2(lado, lado1));
+				printf("El √°rea del rect√°ngulo es %f y su per√≠metro es %f.\n",rectangulo(lado, lado1), rectangulo2(lado, lado1));
 			}
 			break;
 
 		case 3:
+			// Entrada de datos del tri√°ngulo
 			float base, altura, lado1t, lado2t;
-			puts("Inserta la medida de la base del tri·ngulo:");
+			puts("Inserta la medida de la base del tri√°ngulo:");
 			scanf("%f", &base);
 			Limpieza();
-			puts("Inserta la medida de un lado del tri·ngulo que no sea de la base:");
+			puts("Inserta la medida de un lado del tri√°ngulo que no sea de la base:");
 			scanf("%f", &lado1t);
 			Limpieza();
-			puts("Inserta la medida de un lado del tri·ngulo que no sea de la base ni el anterior:");
+			puts("Inserta la medida de un lado del tri√°ngulo que no sea de la base ni el anterior:");
 			scanf("%f", &lado2t);
 			Limpieza();
 			
@@ -158,32 +176,34 @@ int main()
 			controltri2=base+lado2t;
 			controltri3=lado1t+lado2t;
 			
-			puts("Inserta la medida de la altura del tri·ngulo:");
+			puts("Inserta la medida de la altura del tri√°ngulo:");
 			scanf("%f", &altura);
 			Limpieza();
 			if((base<=0)||(altura<=0)||(lado1t<=0)||(lado2t<=0)||((controltri1<=lado2t)||(controltri2<=lado1t)||(controltri3<=base))) {
-				puts("\nNo se puede sacar un ·rea con esas medidas.\n");
+				puts("\nNo se puede sacar un √°rea con esas medidas.\n");
 			} else {
-				printf("El ·rea del tri·ngulo es %f y su perÌmetro es %f.\n",triangulo(base, altura), triangulo2(base, lado1t, lado2t));
+				printf("El √°rea del **tri√°ngulo** es %f y su per√≠metro es %f.\n",triangulo(base, altura), triangulo2(base, lado1t, lado2t));
 			}
 			break;
 
 		case 4:
+			// Entrada de datos del rombo
 			float diametromay, diametromen;
-			puts("Inserta la medida del di·metro mayor del rombo:");
+			puts("Inserta la medida del di√°metro mayor del rombo:");
 			scanf("%f", &diametromay);
 			Limpieza();
-			puts("Inserta la medida del di·metro menor del rombo:");
+			puts("Inserta la medida del di√°metro menor del rombo:");
 			scanf("%f", &diametromen);
 			Limpieza();
 			if ((diametromay<=0)||(diametromen<=0)||(diametromay<diametromen)) {
-				puts("\nNo se puede sacar un ·rea con esa medida.\n");
+				puts("\nNo se puede sacar un √°rea con esa medida.\n");
 			} else {
-				printf("El ·rea del rombo es %f y su perÌmetro es %f.\n",rombo(diametromay, diametromen), rombo2(diametromay, diametromen));
+				printf("El √°rea del rombo es %f y su per√≠metro es %f.\n",rombo(diametromay, diametromen), rombo2(diametromay, diametromen));
 			}
 			break;
 
 		case 5:
+			// Entrada de datos del trapecio
 			float basemay, basemen, alturatrap;
 			puts("Inserta la medida de la base mayor del trapecio:");
 			scanf("%f", &basemay);
@@ -196,17 +216,17 @@ int main()
 			scanf("%f", &alturatrap);
 			Limpieza();
 			if ((basemay<=0)||(basemen<=0)||(alturatrap<=0)||(basemay<basemen)) {
-				puts("\nNo se puede sacar un ·rea con esas medidas.\n");
+				puts("\nNo se puede sacar un √°rea con esas medidas.\n");
 			} else {
-				printf("El ·rea del trapecio es %f y su perÌmetro es %f\n",trapecio(basemay, basemen, alturatrap), trapecio2(basemay, basemen, alturatrap));
+				printf("El √°rea del trapecio es %f y su per√≠metro es %f\n",trapecio(basemay, basemen, alturatrap), trapecio2(basemay, basemen, alturatrap));
 			}
 			break;
 		}
 
-		if (caso != 6) { 
-			puts("\nøDesea calcular algo m·s (1=si)? \n");
+		if (caso != 6) {
+			puts("\n¬øDesea calcular algo m√°s (1=si)? \n");
 			
-			if (scanf("%d", &control) != 1) { 
+			if (scanf("%d", &control) != 1) {
 				control = 0;
 			}
 			Limpieza();
