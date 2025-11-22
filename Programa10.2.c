@@ -1,23 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Prototipos
 void Caratula();
 void ObtenerDivisores(int);
 
+// FunciÃ³n de la carÃ¡tula
 void Caratula()
 {
+	puts("Programa 10 (Divisores).\nObtener todos los divisores de un nÃºmero entero N.");
     puts("Equipo 1\n"
         "Integrantes:\n"
-        "1. Contreras Aviles Jose Raul.\n"
-         "2. Hernandez Tovar Evelyn Ariadna.\n"
-         "3. Rosas Fragoso Leonardo.\n"
-         "4. Rosas Vazquez Eduardo.\n"
-         "5. Zamitiz Carmona Cristian Erasto.");
+        "1. Contreras Aviles JosÃ© RaÃºl.\n"
+        "2. HernÃ¡ndez Tovar Evelyn Ariadna.\n"
+        "3. Rosas Fragoso Leonardo.\n"
+        "4. Rosas VÃ¡zquez Eduardo.\n"
+        "5. Zamitiz Carmona Cristian Erasto.");
     printf("Presiona Enter");
     getchar();
     system("clear");
 }
 
+// FunciÃ³n para obtener los divisores de un nÃºmero
 void ObtenerDivisores(int n) {
 	printf("Sus divisores de %d son: ", n);
 
@@ -42,17 +46,15 @@ int main()
 	int num, repetir;
 	Caratula();
 	do {
-	    puts("Programa 10 (Divisores).");
-	    puts("Obtener todos los divisores de un número entero N.\n"
-	    "El programa debe contener una función que se llame 'ObtenerDivisores' que reciba como parámetro un número entero y que imprima los divisores encontrados de ese número.");
-		printf("Ingrese un número: ");
+	    puts("El programa debe contener una funciÃ³n que se llame 'ObtenerDivisores' que reciba como parÃ¡metro un nÃºmero entero y que imprima los divisores encontrados de ese nÃºmero.");
+		printf("Ingrese un nÃºmero: ");
 		scanf("%d", &num);
 		if(num != 0) {
 			ObtenerDivisores(num);
 		} else {
-			printf("El número 0 no tiene divisores.\n");
+			printf("El nÃºmero 0 no tiene divisores.\n");
 		}
-		printf("¿Desea realizar otra operación? 1. Sí, (Cualquier otro número).- No\n");
+		printf("Â¿Desea realizar otra operaciÃ³n? 1. SÃ­, (Cualquier otro nÃºmero).- No\n");
 		scanf("%d", &repetir);
 		if(repetir==1) {
 			system("clear");
